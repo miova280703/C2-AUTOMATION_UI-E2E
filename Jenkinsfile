@@ -43,7 +43,7 @@ pipeline {
                 always {
                     echo '=== ARCHIVANDO REPORTES DE PLAYWRIGHT ==='
                     // Guarda el reporte de Python como evidencia
-                    archiveArtifacts artifacts: 'playwright-screenplay-framework/reporte.html', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'playwright-screenplay-framework/reports/**', allowEmptyArchive: true
                 }
             }
         }
