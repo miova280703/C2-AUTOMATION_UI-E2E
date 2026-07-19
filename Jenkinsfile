@@ -32,7 +32,7 @@ pipeline {
                     
                     echo '=== INSTALANDO NAVEGADORES DE PLAYWRIGHT ==='
                     // Descarga los browsers internos y las librerías Linux necesarias
-                    sh './venv_jenkins/bin/playwright install --with-deps chromium'
+                    sh './venv_jenkins/bin/python -m playwright install --with-deps chromium'
                     
                     echo '=== EJECUTANDO PRUEBAS BDD (PLAYWRIGHT) ==='
                     // Ejecuta behave y exporta el reporte HTML a una carpeta llamada reports
