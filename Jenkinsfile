@@ -36,14 +36,14 @@ pipeline {
                     
                     echo '=== EJECUTANDO PRUEBAS BDD (PLAYWRIGHT) ==='
                     // Ejecuta behave y exporta el reporte HTML a una carpeta llamada reports
-                    sh './venv_jenkins/bin/behave -f html -o reports/reporte_playwright.html || true'
+                    sh './venv_jenkins/bin/pytest --html=report.html --self-contained-html'
                 }
             }
             post {
                 always {
                     echo '=== ARCHIVANDO REPORTES DE PLAYWRIGHT ==='
                     // Guarda el reporte de Python como evidencia
-                    archiveArtifacts artifacts: 'playwright-screenplay-framework/reports/**', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'playwright-screenplay-framework/report.html', allowEmptyArchive: true
                 }
             }
         }
