@@ -2,13 +2,18 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs() // Esto borra todo el espacio de trabajo automáticamente antes de empezar
+            }
+        }
         stage('Stage 1: Ejecución Serenity') {
             steps {
                 echo '=== CLONANDO Y EJECUTANDO PRUEBAS SERENITY (JAVA) ==='
                 // Entramos a la carpeta exacta de tu proyecto Java
                 dir('serenity-screenplay-framework') {
                     // Limpia y ejecuta las pruebas de Serenity generando el reporte aggregate
-                    sh 'mvn clean verify'
+                    sh 'mvn clean verify -U'
                 }
             }
             post {
