@@ -1,2 +1,4 @@
-playwright==1.49.0  # O la versión que estés usando localmente
+playwright==1.49.0
 pytest-playwright==0.6.2
+screenpy-playwright
+pytest-html
