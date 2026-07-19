@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean Workspace') {
-            steps {
-                cleanWs() // Esto borra todo el espacio de trabajo automáticamente antes de empezar
-            }
-        }
         stage('Stage 1: Ejecución Serenity') {
             steps {
                 echo '=== CLONANDO Y EJECUTANDO PRUEBAS SERENITY (JAVA) ==='
@@ -56,7 +51,8 @@ pipeline {
 
     post {
         always {
-            echo '=== PIPELINE FINALIZADO ==='
+            echo '=== PIPELINE FINALIZADO - LIMPIANDO ESPACIO DE TRABAJO ==='
+            cleanWs()
         }
     }
 }
