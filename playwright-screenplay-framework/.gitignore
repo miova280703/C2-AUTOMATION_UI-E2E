@@ -1,0 +1,40 @@
+# =========================================================================
+# PYTHON (Playwright / Behave)
+# =========================================================================
+# Ignorar el entorno virtual por completo
+venv/
+ENV/
+env/
+
+# Archivos compilados de Python y caché
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.bloop/
+
+# Reportes locales de Behave / Playwright
+playwright-project/reports/
+playwright-project/test-results/
+
+
+# =========================================================================
+# JAVA (Serenity BDD / Maven)
+# =========================================================================
+# Ignorar la carpeta de compilación y reportes locales de Maven
+**/target/
+
+# Archivos de configuración de editores (VS Code, IntelliJ, Eclipse)
+.idea/
+*.iml
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# Logs del sistema
+*.log
+dependency-reduced-pom.xml
